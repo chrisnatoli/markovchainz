@@ -1,7 +1,7 @@
 from random import random
 
 
-song_filename = 'lupefiasco_buildingmindsfaster'
+song_filename = 'lupe_fiasco'
 
 
 
@@ -17,7 +17,7 @@ def multiply(matrix, vector):
 with open(song_filename) as song_file:
     all_words = [ word.lower() for line in song_file
                   for word in line.replace('\n',' \n')
-                  .replace('(','').replace(')','').replace(',',' , ')
+                  .replace('(',' ').replace(')',' ').replace(',',' , ')
                   .split(' ') ]
 all_words = [ word for word in all_words if word != '' ]
 unique_words = sorted(list(set(all_words)))
@@ -62,6 +62,7 @@ for i in range(num_words):
             break
     # Update probability vector.
     probability_vector = multiply(matrix, probability_vector)
+
 
 print(rap)
         
